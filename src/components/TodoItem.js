@@ -1,4 +1,4 @@
-import { h, app } from 'hyperapp'
+import { h } from 'hyperapp'
 
 const TodoItem = ({ id, value, done, toggle }) => (
     <li
@@ -14,6 +14,4 @@ const TodoItem = ({ id, value, done, toggle }) => (
     </li>
 )
 
-export {
-    TodoItem,
-}
+export default TodoItem

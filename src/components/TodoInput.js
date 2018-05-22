@@ -1,4 +1,4 @@
-import { h, app } from 'hyperapp'
+import { h } from 'hyperapp'
 
 const TodoInput = ({ value, placeholder, input, add }) => (
     <div class="flex">
@@ -14,7 +14,4 @@ const TodoInput = ({ value, placeholder, input, add }) => (
 )
 
 
-export {
-    TodoInput,
-}
-
+export default TodoInput
