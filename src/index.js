@@ -14,7 +14,7 @@ const state = {
 
 const view = (state, actions) => (
     <div>
-        <h1>Todo</h1>
+        <h1><img src="./assets/logo.png" alt="hyprapp" />Todo</h1>
         <p>
             {Object.keys(FilterInfo)
                 .filter(key => FilterInfo[key] !== state.filter)
@@ -83,6 +83,6 @@ const actions = {
     filter: ({ value }) => ({ filter: value })
 }
 
-app(state, actions, view, document.body)
+app(state, actions, view, document.querySelector('#app'))
 
 
