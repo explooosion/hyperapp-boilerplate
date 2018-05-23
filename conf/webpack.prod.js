@@ -17,12 +17,12 @@ module.exports = Merge(CommonConfig, {
       beautify: false,
       mangle: {
         screw_ie8: true,
-        keep_fnames: true
+        keep_fnames: true,
       },
       compress: {
-        screw_ie8: true
+        screw_ie8: true,
       },
-      comments: false
+      comments: false,
     })
   ]
 });
