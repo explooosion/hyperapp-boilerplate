@@ -1,7 +1,6 @@
 import './styles/index.scss';
 import { h, app } from "hyperapp"
-import TodoItem from './components/TodoItem'
-import TodoInput from './components/TodoInput'
+import { TodoItem, TodoInput } from './components'
 
 const FilterInfo = { All: 0, Todo: 1, Done: 2 }
 
