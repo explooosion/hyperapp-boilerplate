@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -77,6 +78,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
+    new CopyWebpackPlugin([{
+      from: 'assets',
+      to: 'assets'
+    }]),
     extractSass
   ]
 };
