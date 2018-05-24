@@ -2,10 +2,10 @@ import { h } from 'hyperapp'
 
 import Counter from '../components/Counter'
 
-const Home = props => () => (
+const Home = ({ state, actions }) => () => (
   <div>
     <h1>Home</h1>
-    <Counter state={props.state} actions={props.actions} />
+    <Counter state={state} actions={actions} />
   </div>
 )
 

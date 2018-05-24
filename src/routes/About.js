@@ -2,10 +2,10 @@ import { h } from 'hyperapp'
 
 import Todo from '../components/Todo'
 
-const About = props => () => (
+const About = ({ state, actions }) => () => (
   <div>
     <h1>About</h1>
-    <Todo state={props.state} actions={props.actions} />
+    <Todo state={state} actions={actions} />
   </div>
 )
 

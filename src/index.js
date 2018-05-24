@@ -7,6 +7,7 @@ import bootConnect from './utils/bootConnect'
 import Home from './routes/Home'
 import About from './routes/About'
 import Article from './routes/Article'
+import Form from './routes/Form'
 
 const view = (state, actions) => {
   const connect = bootConnect(state, actions)
@@ -22,11 +23,15 @@ const view = (state, actions) => {
         <li>
           <Link to="/article">Article</Link>
         </li>
+        <li>
+          <Link to="/form">Form</Link>
+        </li>
       </ul>
       <hr />
       <Route path="/" render={connect(Home, 'counter')} />
       <Route path="/about" render={connect(About, 'todo')} />
       <Route parent path="/article" render={Article} />
+      <Route path="/form" render={connect(Form, 'form')} />
     </div>
   )
 }

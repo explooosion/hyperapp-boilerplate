@@ -3,6 +3,7 @@ import { location } from "@hyperapp/router"
 
 import Counter from './Counter'
 import Todo from './Todo'
+import Form from './Form'
 
 /**
  * Add your models 
@@ -11,6 +12,7 @@ import Todo from './Todo'
 const models = {
   counter: Counter,
   todo: Todo,
+  form: Form,
 }
 
 let state = {
