@@ -1,0 +1,19 @@
+$blue: #00caff;
+$black: #111;
+.list {
+  margin: 1rem 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    a {
+      display: block;
+      padding: 0 1rem;
+      color: $blue;
+      font-size: 1rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
