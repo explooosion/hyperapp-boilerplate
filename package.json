@@ -52,6 +52,7 @@
     "webpack-merge": "4.1.0"
   },
   "dependencies": {
+    "@hyperapp/router": "^0.7.0",
     "hyperapp": "^1.2.5"
   }
 }
