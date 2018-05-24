@@ -1,22 +1,17 @@
-import './index.scss';
-import { h, app } from "hyperapp"
+import './index.scss'
+import { h, app } from 'hyperapp'
 import { Link, Route, location } from "@hyperapp/router"
+import { state, actions } from './models/index'
 
 import Home from './routes/Home'
 import About from './routes/About'
 import Article from './routes/Article'
 
-const state = {
-  location: location.state
-}
+import Counter from './components/Counter'
 
-const actions = {
-  location: location.actions
-}
-
-const view = state => (
-  <div>
-    <ul>
+const view = (state, actions) => (
+  <div class="wrapper">
+    <ul class="menu">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -27,9 +22,8 @@ const view = state => (
         <Link to="/article">Article</Link>
       </li>
     </ul>
-
     <hr />
-
+    <Counter state={state} actions={actions} />
     <Route path="/" render={Home} />
     <Route path="/about" render={About} />
     <Route parent path="/article" render={Article} />

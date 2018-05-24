@@ -1,9 +1,9 @@
 import { h } from 'hyperapp'
 
-const Home = () => (
+const Home = (state) => (
   <div>
     <h2>Home</h2>
-  </div>
+  </div >
 )
 
 export default Home

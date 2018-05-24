@@ -1,12 +1,13 @@
 import { h } from 'hyperapp'
 import { Link, Route } from "@hyperapp/router"
 
+import './Article.scss'
 import ArticleId from '../components/ArticleId'
 
 const Article = ({ match }) => (
   <div key="articleId">
     <h2>Articles</h2>
-    <ul>
+    <ul class="list">
       <li>
         <Link to={`${match.url}/1`}>News1</Link>
       </li>
