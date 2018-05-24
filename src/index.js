@@ -7,28 +7,35 @@ import Home from './routes/Home'
 import About from './routes/About'
 import Article from './routes/Article'
 
-import Counter from './components/Counter'
+const bootConnect = (state, actions) => {
+  return (component) => {
+    return component({ state, actions });
+  }
+}
 
-const view = (state, actions) => (
-  <div class="wrapper">
-    <ul class="menu">
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/article">Article</Link>
-      </li>
-    </ul>
-    <hr />
-    <Counter state={state} actions={actions} />
-    <Route path="/" render={Home} />
-    <Route path="/about" render={About} />
-    <Route parent path="/article" render={Article} />
-  </div>
-)
+const view = (state, actions) => {
+  const connect = bootConnect(state, actions);
+  return (
+    <div class="wrapper">
+      <ul class="menu">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/article">Article</Link>
+        </li>
+      </ul>
+      <hr />
+      <Route path="/" render={connect(Home)} />
+      <Route path="/about" render={About} />
+      <Route parent path="/article" render={Article} />
+    </div>
+  )
+}
+
 
 const main = app(state, actions, view, document.body)
 
