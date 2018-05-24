@@ -1,18 +1,35 @@
 import { h } from 'hyperapp'
 import { location } from "@hyperapp/router"
 
-const state = {
-  count: 0,
+import Counter from './Counter'
+import Todo from './Todo'
+
+/**
+ * Add your models 
+ * Ex. { namespace: model }
+ */
+const models = {
+  counter: Counter,
+  todo: Todo,
+}
+
+let state = {
   location: location.state
 }
 
-const actions = {
+let actions = {
   location: location.actions,
-  down: value => state => ({ count: state.count - value }),
-  up: value => state => ({ count: state.count + value })
 }
 
-export {
-  state,
-  actions,
+const compose = (models) => {
+  Object.keys(models).forEach(namespace => {
+    state[namespace] = models[namespace].state
+    actions[namespace] = models[namespace].actions
+  })
 }
+
+compose(models)
+
+export {
+  state, actions
+}  

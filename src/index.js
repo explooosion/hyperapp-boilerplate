@@ -2,19 +2,14 @@ import './index.scss'
 import { h, app } from 'hyperapp'
 import { Link, Route, location } from "@hyperapp/router"
 import { state, actions } from './models/index'
+import bootConnect from './utils/bootConnect'
 
 import Home from './routes/Home'
 import About from './routes/About'
 import Article from './routes/Article'
 
-const bootConnect = (state, actions) => {
-  return (component) => {
-    return component({ state, actions });
-  }
-}
-
 const view = (state, actions) => {
-  const connect = bootConnect(state, actions);
+  const connect = bootConnect(state, actions)
   return (
     <div class="wrapper">
       <ul class="menu">
@@ -29,8 +24,8 @@ const view = (state, actions) => {
         </li>
       </ul>
       <hr />
-      <Route path="/" render={connect(Home)} />
-      <Route path="/about" render={About} />
+      <Route path="/" render={connect(Home, 'counter')} />
+      <Route path="/about" render={connect(About, 'todo')} />
       <Route parent path="/article" render={Article} />
     </div>
   )
