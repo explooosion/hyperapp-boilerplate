@@ -4,7 +4,7 @@ import Counter from '../components/Counter'
 
 const Home = props => () => (
   <div>
-    <h2>Home</h2>
+    <h1>Home</h1>
     <Counter state={props.state} actions={props.actions} />
   </div>
 )
