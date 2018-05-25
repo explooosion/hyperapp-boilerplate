@@ -9,6 +9,8 @@ const Form = ({ state, actions }) => () => (
       oninput={e => actions.input({ value: e.target.value })}
       value={state.value}
     />
+    <button type="button" onclick={actions.send}>Send</button>
+    <p>{state.status}</p>
   </div>
 )
 
